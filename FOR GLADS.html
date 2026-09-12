@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy 21st Birthday, My Glad 💚</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background:
+        linear-gradient(rgba(232,245,233,0.92), rgba(200,230,201,0.94)),
+        url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+    color: #29452f;
+    overflow-x: hidden;
+}
+
+/* Main Card */
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+.card {
+    width: 100%;
+    max-width: 650px;
+    background: rgba(255,255,255,0.94);
+    border-radius: 30px;
+    padding: 40px 35px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(36,75,42,0.25);
+    position: relative;
+    z-index: 5;
+    animation: appear 1.2s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Lily Decorations */
+
+.lily {
+    position: absolute;
+    font-size: 45px;
+    animation: sway 4s ease-in-out infinite;
+}
+
+.lily.one {
+    top: -25px;
+    left: -15px;
+}
+
+.lily.two {
+    top: -20px;
+    right: -15px;
+    animation-delay: 1s;
+}
+
+.lily.three {
+    bottom: -20px;
+    left: -10px;
+    animation-delay: 2s;
+}
+
+.lily.four {
+    bottom: -20px;
+    right: -10px;
+    animation-delay: 3s;
+}
+
+@keyframes sway {
+
+    0%,100% {
+        transform: rotate(-8deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(8deg) translateY(-8px);
+    }
+}
+
+/* Header */
+
+.small-title {
+    color: #568c5f;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 52px;
+    color: #35663d;
+    margin-bottom: 5px;
+}
+
+.age {
+    font-family: 'DM Serif Display', serif;
+    font-size: 90px;
+    line-height: 1;
+    color: #79a87e;
+    margin: 5px 0 15px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #6b806e;
+}
+
+/* Divider */
+
+.divider {
+    width: 100px;
+    height: 2px;
+    background: #9cbe9f;
+    margin: 25px auto;
+}
+
+/* Letter */
+
+.letter {
+    text-align: left;
+    line-height: 1.9;
+    font-size: 15px;
+    color: #4c604f;
+}
+
+.letter p {
+    margin-bottom: 17px;
+}
+
+.greeting {
+    font-family: 'DM Serif Display', serif;
+    font-size: 25px;
+    color: #477c4f;
+    margin-bottom: 15px;
+}
+
+/* Signature */
+
+.signature {
+    text-align: right;
+    margin-top: 25px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 23px;
+    color: #477c4f;
+}
+
+/* Button */
+
+button {
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    background: #4f8758;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 8px 20px rgba(55,100,62,.25);
+    transition: .3s;
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.04);
+    background: #3f7047;
+}
+
+/* Hidden Message */
+
+#specialMessage {
+    display: none;
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 20px;
+    background: #edf7ee;
+    color: #426348;
+    line-height: 1.8;
+    animation: messageAppear .8s ease;
+}
+
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating Hearts */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    pointer-events: none;
+    z-index: 1;
+    animation: floatHeart linear forwards;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Heart Confetti */
+
+.confetti {
+    position: fixed;
+    top: -30px;
+    pointer-events: none;
+    z-index: 20;
+    animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 20px 12px;
+    }
+
+    .card {
+        padding: 32px 23px;
+        border-radius: 25px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    .age {
+        font-size: 75px;
+    }
+
+    .letter {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .lily {
+        font-size: 35px;
+    }
+
+    .lily.one {
+        left: -5px;
+    }
+
+    .lily.two {
+        right: -5px;
+    }
+
+    .signature {
+        font-size: 20px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <!-- Lily Flowers -->
+
+        <div class="lily one">🌸</div>
+        <div class="lily two">🌸</div>
+        <div class="lily three">🌸</div>
+        <div class="lily four">🌸</div>
+
+        <div class="small-title">
+            A birthday letter for my
+        </div>
+
+        <h1>Gladys</h1>
+
+        <div class="age">
+            21
+        </div>
+
+        <div class="subtitle">
+            Happy 21st Birthday! 🌿
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="letter">
+
+            <div class="greeting">
+                Hi BFF,
+            </div>
+
+            <p>
+                Happy 21st birthday! 💚
+            </p>
+
+            <p>
+                Today isn't just about celebrating another year of your life.
+                It's about celebrating <b>you</b> — the person you've become,
+                the experiences that shaped you, the challenges you've survived,
+                and all the beautiful moments that brought you to where you are today.
+            </p>
+
+            <p>
+                Twenty-one is such a beautiful age. You're slowly entering
+                another chapter of life where there will be more dreams to chase,
+                more lessons to learn, more people to meet, and more memories
+                waiting to be made.
+            </p>
+
+            <p>
+                Life won't always be easy. There will be days when you'll
+                question yourself, days when things won't go according to plan,
+                and moments when you'll feel like you're not doing enough.
+                But I hope you always remember how far you've already come.
+            </p>
+
+            <p>
+                You've grown through every experience — even the difficult ones.
+                Every mistake taught you something. Every heartbreak made you
+                stronger. Every happy memory gave you something to treasure.
+                And every challenge helped shape the person you're becoming.
+            </p>
+
+            <p>
+                So as you turn 21, I hope you never feel pressured to have
+                everything figured out. You don't have to know exactly where
+                your life is going yet. Take your time. Enjoy the little things.
+                Make mistakes. Laugh until your stomach hurts. Travel.
+                Love deeply. Dream bigger.
+            </p>
+
+            <p>
+                Most importantly, please don't forget to appreciate yourself.
+                You deserve the same kindness and patience that you give to
+                everyone else.
+            </p>
+
+            <p>
+                I hope this new chapter brings you closer to the life you've
+                always dreamed of. I hope you find more reasons to smile,
+                more moments that make your heart happy, and people who genuinely
+                appreciate having you in their lives.
+            </p>
+
+            <p>
+                And whatever happens next, I hope you continue becoming the
+                best version of yourself — not because you have to prove
+                anything to anyone, but because you deserve to see just how
+                amazing your life can become.
+            </p>
+
+            <p>
+                Once again, happy 21st birthday, Bes. 🌸💚
+                Here's to your past, your present, and all the beautiful
+                things waiting for you in the future.
+            </p>
+
+            <div class="signature">
+                With love,<br>
+                Someone who wishes you the best 💚
+            </div>
+
+        </div>
+
+        <button onclick="celebrate()">
+            Click mo here
+        </button>
+
+        <div id="specialMessage">
+
+            🌿 <b>One more thing...</b> 🌿
+
+            <br><br>
+
+            No matter how old you get, never lose that side of you
+            that makes you uniquely YOU. 
+
+<br><br>
+
+You’re really beautiful, and I hope you know that. Not just because of how you look, but because there’s something about the way you carry yourself that makes you stand out. You shouldn’t ever have to compare yourself to anyone or question if you’re pretty enough. You are.
+
+<br><br>
+
+Know your worth, girl. You deserve to feel confident when you look in the mirror, because there’s nothing you need to change just to be considered beautiful. Own your looks, own your personality, and never let anyone make you feel less than what you are. You’re genuinely attractive, and I hope you see yourself the way other people see you.
+
+            <br><br>
+
+            Keep smiling. Keep dreaming.
+            Keep choosing yourself.
+
+            <br><br>
+
+            <b>
+                21 naka tiguwang!!!. 💚🌸
+            </b>
+
+            <br><br>
+
+            Happy Birthday, Bes Love u! 🎂✨
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* Floating Green Hearts */
+
+function createFloatingHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = ["💚", "🌿", "💚", "🍃"];
+
+    heart.innerHTML =
+        hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (15 + Math.random() * 25) + "px";
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 6) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 11000);
+}
+
+setInterval(createFloatingHeart, 500);
+
+
+/* Birthday Confetti */
+
+function celebrate() {
+
+    document.getElementById("specialMessage").style.display = "block";
+
+    for (let i = 0; i < 180; i++) {
+
+        const confetti =
+            document.createElement("div");
+
+        confetti.className = "confetti";
+
+        const symbols = [
+            "💚",
+            "💚",
+            "💚",
+            "🌿",
+            "🍃",
+            "🌱"
+        ];
+
+        confetti.innerHTML =
+            symbols[
+                Math.floor(Math.random() * symbols.length)
+            ];
+
+        confetti.style.left =
+            Math.random() * 100 + "vw";
+
+        confetti.style.fontSize =
+            (14 + Math.random() * 22) + "px";
+
+        confetti.style.animationDuration =
+            (2 + Math.random() * 3) + "s";
+
+        confetti.style.animationDelay =
+            Math.random() * 1.5 + "s";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+            confetti.remove();
+        }, 6000);
+    }
+
+}
+
+</script>
+
+</body>
+</html>
